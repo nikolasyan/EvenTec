@@ -1,21 +1,3 @@
-const events = [
-  {
-    img: "",
-    nome: "evento 01",
-    categoria: "marke",
-    sobre: "loren loren loren",
-    data: "12/15/68",
-    hora: "20:54",
-  },
-  {
-    img: "",
-    nome: "evento 02",
-    categoria: "tec",
-    sobre: "loren loren lorenloren loren lorenloren loren lorenloren loren loren",
-    data: "12/58/41",
-    hora: "20:56",
-  }
-]
 
 function pageHome(req, res) {
   return res.render("index.html")
@@ -32,23 +14,32 @@ function pageCadastro(req, res) {
 }
 
 const express = require('express')
+const bodyParser = require('body-parser');
 const server =  express()
+server.use(bodyParser.urlencoded({ extended: false }));
+server.use(bodyParser.json());
+server.use(express.json())
+
+
 
 const nunjucks = require('nunjucks')
+const { eventRouter } = require('./routes/event.router')
 nunjucks.configure('src/views', {
   express: server,
   noCache: true,
 })
 
-server.post("/cadastro", () =>{
-  console.log(req)
+server.post("/cadastro", (req, res) => {
+  console.log(req.body);
   res.json({
     "status": 200
-  })
-})
+  });
+});
+
 
 server.use(express.static("public"))
 .get("/", pageHome)
 .get("/cadastrar",pageCadastro)
 .get("/pesquisar", pageEvents)
 .listen(3000) 
+server.use(eventRouter)
