@@ -77,4 +77,4 @@ server
   .get('/pesquisar', pageEvents)
   .get('/login', pageLogin)
   .get('/meusEventos', pageMeusEventos)  
-  .listen(5500)
+  .listen(3000)
