@@ -1,4 +1,3 @@
-// controller.js
 events = []
 
 class EventController {
