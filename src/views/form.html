@@ -97,6 +97,19 @@
 </head>
 
 <body id="pageForm">
+    <!-- Plugin Libras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <!-- Plugin Libras -->
+
     <div id="container">
         <header class="page-header">
             <div class="col">
@@ -115,26 +128,26 @@
 
         <main>
             <!-- formulario -->
-            <form action="/cadastrar" method="post" id="create-form">
+            <form action="" id="create-form">
                 <fieldset>
                     <legend>Dados do evento:</legend>
 
                     <!-- titulo -->
                     <div class="input-block">
                         <label for="title">Título</label>
-                        <input name="titulo" id="titulo" required>
+                        <input name="title" id="title" required>
                     </div>
 
                     <!-- link foto -->
                     <div class="input-block">
                         <label for="avatar">Link da sua foto <small>(comece com //http)</small></label>
-                        <input name="img" id="img" type="url" required>
+                        <input name="avatar" id="avatar" type="url" required>
                     </div>
 
                     <!-- Descricao -->
                     <div class="textarea-block">
                         <label for="desc">Descrição</label>
-                        <textarea name="sobre" id="sobre" required></textarea>
+                        <textarea name="desc" id="desc" required></textarea>
                     </div>
                 </fieldset>
 
@@ -142,33 +155,28 @@
                     <legend>Categoria</legend>
                     <div class="select-block">
                         <label for="subject">Tema</label>
-                        <select name="categoria" id="categoria">
+                        <select name="subject" id="subject">
                             <option value="">Selecione uma opção</option>
-                            <option value="Tecnologia">Tecnologia</option>
-                            <option value="Educação e Empreendedorismo">Educação e Empreendedorismo</option>
+                            <option value="1">Tecnologia</option>
+                            <option value="2">Educação e Empreendedorismo</option>
                         </select>
                     </div>
                 </fieldset>
 
-                <fieldset id="schedule-items" >
+                <fieldset id="schedule-items">
                     <legend>Data e Hora</legend>
                     <div class="schedule-item">
                         <div class="select-block">
                             <label for="date">Data</label>
-                            <input 
-                                id="data" 
-                                name="data" 
-                                type="date"
-                                value=""
-                            >
+                            <input id="date" name="date" type="date" value="">
                         </div>
                         <div class="input-block">
                             <label for="time-from">Das</label>
-                            <input type="time" id="horaIni" name="horaIni" required>
+                            <input type="time" id="time-from" name="time-from" required>
                         </div>
                         <div class="input-block">
                             <label for="time-to">Até</label>
-                            <input type="time" id="horaFim" name="horaFim" required>
+                            <input type="time" id="time-to" name="time-to" required>
                         </div>
                     </div>
                 </fieldset>
@@ -179,10 +187,10 @@
                     <img src="./img/Atenção.svg" alt="Atenção">
                     Importante!<br>Preencha todos os dados
                 </p>
-                <button type="submit" form="create-form">Salvar cadastro</button>
+                <button onclick="Modal.open()" class="button new" type="submit" form="create-form">Salvar cadastro
+                </button>
             </footer>
         </main>
-
     </div>
 
     <div class="modal-overlay">
@@ -194,7 +202,33 @@
         </div>
     </div>
 
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <img src="./img/Feito.svg" alt="">
+            <h1>Cadastro Salvo!</h1>
+            <p>Todo certo, seu cadastro foi salvo.</p>
+            <a href="/">Voltar para página inicial</a>
+        </div>
+    </div>
+
     <script src="./scripts/main.js"></script>
+    <script>
+        const Modal = {
+            open() {
+                document
+                    .querySelector('.modal-overlay')
+                    .classList
+                    .add('active')
+            },
+            close() {
+                document
+                    .querySelector('.modal-overlay')
+                    .classList
+                    .remove('active')
+            }
+        }
+    </script>
 
     <script>
         const Modal = {

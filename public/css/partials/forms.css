@@ -1,19 +1,21 @@
 /* Form - search */
-#search {
+html,
+body {
+    height: 100vh;
+}
+.search {
     margin-top: 3.2rem;
 }
 
 #pageEvent .algItem {
     background-color: var(--background-color);
     height: 6rem;
-    padding: 10px;
     
     border-radius: .8rem;
     margin-top: 1rem;
     padding: 0 1.6rem;
     font: 1.6rem Roboto;
     
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,7 +51,7 @@
     background: none;
 }
 
-/* Página Form ==========================================================================*/
+/* Page Form ==========================================================================*/
 #pageForm input,
 #pageForm select,
 .textarea-block textarea{

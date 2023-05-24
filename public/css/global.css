@@ -16,7 +16,9 @@
     --btn-error-color:#E33D3D;
     --btn-error-colorh:#B43131;
     --white-text: #f1f1f1;
+    --white: #fff;
     --dark-text: #333;
+    --dark-text-light: #a19f9f;
     --background-secondary-color: #F0F0F7;
     --text-secondary-color: #11174D;
     --border-color: #E6E6F0;
@@ -46,18 +48,18 @@
     box-sizing: border-box;
 }
 
-html,
+/* html,
 body {
     height: 100vh;
 }
 
 body {
-    /* background-color: var(--first-color); */
+    background-color: var(--first-color);
 
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 body,
 input,
@@ -77,4 +79,16 @@ textarea {
     :root{
         font-size: 62.5%;
     }
+}
+
+/* Plugin Libras */
+[vw-access-button] .access-button {
+    width: 27%;
+    float: right;
+    border-radius: 50%;
+    border: 4px solid var(--btn-color);
+}
+[vw] [vw-access-button] .access-button {
+    width: 55px;
+    float: right;
 }
