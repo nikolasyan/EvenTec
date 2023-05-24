@@ -2,31 +2,372 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EvenTec</title>
-    <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/partials/pageHome.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EvenTec</title>
+
+  <!-- Css Global -->
+  <link rel="stylesheet" href="./css/global.css">
+
+  <!-- Fontawesome Link for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="./css/partials/swiper-bundle.min.css">
+
+  <!-- Css Page Home -->
+  <link rel="stylesheet" href="./css/partials/pageHome.css">
+
 </head>
 
 <body id="pageHome">
-    <div id="container">
-        <div class="logoContainer">
-            <img src="./img/Eventec.svg" alt="Logo" class="logo">
-            <h2>Sua plaforma de compartilhamento de eventos</h2>
-        </div>
-
-        <img class="ilustra" src="./img/Home.svg" alt="Imagem ilustra o compartilhamento de eventos.">
-
-        <p class="welcome">Seja bem-vindo.<strong>&#32; O que deseja fazer?</strong></p>
-
-        <div class="buttons-container">
-            <a class="pesquisar" href="/pesquisar">Pesquisar evento</a>
-            <a class="cadastrar" href="/cadastrar">Cadastrar evento</a>
-        </div>
+  <!-- Plugin Libras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
     </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logoNav">EvenTec</div>
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+      <li><a href="#resources">Recursos</a></li>
+      <li><a href="#aboutUs">Sobre nós</a></li>
+      <li><a href="#team">Nosso time</a></li>
+      <li><a class="active" href="/login">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header id="header-content">
+    <div id="container">
+      <div class="logoContainer">
+        <!-- <img src="./img/Eventec.svg" alt="Logo" class="logo"> -->
+        <h2>Sua plaforma de compartilhamento de eventos</h2>
+      </div>
+
+      <img class="ilustra" src="./img/Home.svg" alt="Imagem ilustra o compartilhamento de eventos.">
+
+      <p class="welcome">Seja bem-vindo.<strong>&#32; O que deseja fazer?</strong></p>
+
+      <div class="buttons-container">
+        <a class="pesquisar" href="/pesquisar">Pesquisar evento</a>
+        <a class="cadastrar" href="/cadastrar">Cadastrar evento</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Resources -->
+  <section id="resources">
+    <div class="row">
+      <h1>Nossos Recursos</h1>
+    </div>
+    <div class="row">
+      <!-- Column One -->
+      <div class="column">
+        <div class="cardResources">
+          <div class="iconResources">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h3>User Friendly</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+            asperiores natus ad molestiae aliquid explicabo. Iste eaque quo et
+            commodi.
+          </p>
+        </div>
+      </div>
+      <!-- Column Two -->
+      <div class="column">
+        <div class="cardResources">
+          <div class="iconResources">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>Super Secure</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+            asperiores natus ad molestiae aliquid explicabo. Iste eaque quo et
+            commodi.
+          </p>
+        </div>
+      </div>
+      <!-- Column Three -->
+      <div class="column">
+        <div class="cardResources">
+          <div class="iconResources">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <h3>Quick Support</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+            asperiores natus ad molestiae aliquid explicabo. Iste eaque quo et
+            commodi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="aboutUs">
+    <div class="containerAbout">
+      <div class="about">
+        <div class="about-img">
+          <img src="./img/teamWork.svg" alt="">
+        </div>
+        <div class="about-content">
+          <h1>Sobre nós</h1>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Carousel -->
+  <div id="team" class="headingTitle">
+    <div class="heading">
+      <h1>Nosso time</h1>
+    </div>
+  </div>
+  <section class="cardSlider">
+    <div class="slide-container swiper">
+      <div class="slide-content">
+        <div class="card-wrapper swiper-wrapper">
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+
+              <div class="card-image">
+                <img class="card-img" src="https://avatars.githubusercontent.com/u/65463404?v=4"
+                  alt="Foto da Carolina no GitHub" draggable="false">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Carolina Silva</h2>
+              <p class="description">Front-end</p>
+
+              <div class="icons">
+                <a target="_blank" href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a target="_blank" href="https://github.com/Carolina-Silva">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+
+              <div class="card-image">
+                <img class="card-img" src="https://avatars.githubusercontent.com/u/87383017?v=4"
+                  alt="Foto do Daniel no GitHub" draggable="false">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Daniel Santos</h2>
+              <p class="description">Back-end</p>
+
+              <div class="icons">
+                <a target="_blank" href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+
+              <div class="card-image">
+                <img class="card-img" src="https://avatars.githubusercontent.com/u/106314110?v=4"
+                  alt="Foto do Diego no GitHub" draggable="false">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Diego Ribeiro</h2>
+              <p class="description">Documentação</p>
+
+              <div class="icons">
+                <a target="_blank" href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+
+              <div class="card-image">
+                <img class="card-img" src="https://avatars.githubusercontent.com/u/111024626?v=4"
+                  alt="Foto do Guilherme no GitHub" draggable="false">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Guilherme Henrique</h2>
+              <p class="description">Documentação</p>
+
+              <div class="icons">
+                <a target="_blank" href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+
+              <div class="card-image">
+                <img class="card-img" src="https://avatars.githubusercontent.com/u/65463907?v=4"
+                  alt="Foto da Nicoly no GitHub" draggable="false">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Nicoly Avelino</h2>
+              <p class="description">Front-end</p>
+
+              <div class="icons">
+                <a target="_blank" href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+
+              <div class="card-image">
+                <img class="card-img" src="https://avatars.githubusercontent.com/u/106313973?v=4"
+                  alt="Foto do Nikolas no GitHub" draggable="false">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Níkolas Costa</h2>
+              <p class="description">Back-end</p>
+
+              <div class="icons">
+                <a target="_blank" href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+
+              <div class="card-image">
+                <img class="card-img" src="https://avatars.githubusercontent.com/u/74341111?v=4"
+                  alt="Foto do Victor no GitHub" draggable="false">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Víctor Viana</h2>
+              <p class="description">Back-end</p>
+
+              <div class="icons">
+                <a target="_blank" href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-button-next swiper-navBtn"></div>
+      <div class="swiper-button-prev swiper-navBtn"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-content">
+    <p>Desenvolvido para o projeto de PI 1°semestre 2023</p>
+    <small>Eventec&copy;2023</small>
+  </footer>
+
+  <!-- Plugin Libras -->
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <!-- Fontawesome  -->
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+  <!-- Swiper JS -  Card - Team Carousel -->
+  <script src="./scripts/swiper-bundle.min.js"></script>
+
+  <!-- Script - Card - Team Carousel -->
+  <script src="./scripts/card.js"></script>
+
+  <!-- Script - Nav -->
+  <script src="./scripts/nav.js"></script>
 
 </body>
 
-</html> 
+</html>

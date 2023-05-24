@@ -1,0 +1,48 @@
+/* Header */
+html,
+body {
+    height: 100vh;
+}
+body{
+    background: var(--background-secondary-color);
+}
+#pageMyEvent #container {
+    width: 100vw;
+    height: 100vh;
+}
+/* 
+#pageMyEvent header p{
+    font: 500 2rem Roboto;
+    margin-top: 2rem;
+    padding: 3rem 0;
+}  */
+
+/* Main */
+#pageMyEvent main {
+    margin: 3.2rem auto;
+    width: 90%;
+}
+
+@media(min-width: 700px) {
+    #pageMyEvent #container {
+        max-width: 100vw;
+    }
+    
+    #pageMyEvent main {
+        padding: 32px 0;
+        max-width: 740px;
+        margin: 0 auto;
+    }
+    
+    /* #pageMyEvent header p{
+        padding: 0rem 0;
+        max-width: 360px;
+    }  */
+
+    #pageMyEvent page-header .header-content {
+        margin: 0 auto;
+        padding-bottom: 28px;
+       
+    }
+
+}
