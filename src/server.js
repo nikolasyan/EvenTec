@@ -1,16 +1,20 @@
 
-function pageHome(req, res) {
-  return res.render("index.html")
 
+function pageHome(req, res) {
+  return res.render('index.html')
 }
 function pageEvents(req, res) {
   const filters = req.query
-  return res.render("event.html", { events, filters })
-
+  return res.render('event.html', { events, filters })
 }
 function pageCadastro(req, res) {
-  return res.render("form.html")
-
+  return res.render('form.html')
+}
+function pageLogin(req, res) {
+  return res.render('login.html')
+}
+function pageMeusEventos(req, res) {
+  return res.render('myEvent.html')
 }
 
 const express = require('express')
@@ -29,17 +33,20 @@ nunjucks.configure('src/views', {
   noCache: true,
 })
 
-server.post("/cadastro", (req, res) => {
-  console.log(req.body);
+server.post('/cadastro', () => {
+  console.log(req)
   res.json({
-    "status": 200
-  });
-});
+    status: 200,
+  })
+})
 
-
-server.use(express.static("public"))
-.get("/", pageHome)
-.get("/cadastrar",pageCadastro)
-.get("/pesquisar", pageEvents)
-.listen(3000) 
-server.use(eventRouter)
+server
+.use(express.static('public'))
+  .get('/', pageHome)
+  .get('/cadastrar', pageCadastro)
+  .get('/pesquisar', pageEvents)
+  .get('/login', pageLogin)
+  .get('/meusEventos', pageMeusEventos)  
+  .listen(3000)
+  server.use(eventRouter)
+  

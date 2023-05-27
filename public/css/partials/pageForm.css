@@ -1,3 +1,8 @@
+html,
+body {
+    height: 100vh;
+}
+
 body{
     background: var(--background-secondary-color);
 }
