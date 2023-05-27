@@ -128,26 +128,26 @@
 
         <main>
             <!-- formulario -->
-            <form action="" id="create-form">
+            <form action="/cadastrar" method="post" id="create-form">
                 <fieldset>
                     <legend>Dados do evento:</legend>
 
                     <!-- titulo -->
                     <div class="input-block">
                         <label for="title">Título</label>
-                        <input name="title" id="title" required>
+                        <input name="titulo" id="titulo" required>
                     </div>
 
                     <!-- link foto -->
                     <div class="input-block">
                         <label for="avatar">Link da sua foto <small>(comece com //http)</small></label>
-                        <input name="avatar" id="avatar" type="url" required>
+                        <input name="img" id="img" type="url" required>
                     </div>
 
                     <!-- Descricao -->
                     <div class="textarea-block">
                         <label for="desc">Descrição</label>
-                        <textarea name="desc" id="desc" required></textarea>
+                        <textarea name="sobre" id="sobre" required></textarea>
                     </div>
                 </fieldset>
 
@@ -155,28 +155,33 @@
                     <legend>Categoria</legend>
                     <div class="select-block">
                         <label for="subject">Tema</label>
-                        <select name="subject" id="subject">
+                        <select name="categoria" id="categoria">
                             <option value="">Selecione uma opção</option>
-                            <option value="1">Tecnologia</option>
-                            <option value="2">Educação e Empreendedorismo</option>
+                            <option value="Tecnologia">Tecnologia</option>
+                            <option value="Educação e Empreendedorismo">Educação e Empreendedorismo</option>
                         </select>
                     </div>
                 </fieldset>
 
-                <fieldset id="schedule-items">
+                <fieldset id="schedule-items" >
                     <legend>Data e Hora</legend>
                     <div class="schedule-item">
                         <div class="select-block">
                             <label for="date">Data</label>
-                            <input id="date" name="date" type="date" value="">
+                            <input 
+                                id="data" 
+                                name="data" 
+                                type="date"
+                                value=""
+                            >
                         </div>
                         <div class="input-block">
                             <label for="time-from">Das</label>
-                            <input type="time" id="time-from" name="time-from" required>
+                            <input type="time" id="horaIni" name="horaIni" required>
                         </div>
                         <div class="input-block">
                             <label for="time-to">Até</label>
-                            <input type="time" id="time-to" name="time-to" required>
+                            <input type="time" id="horaFim" name="horaFim" required>
                         </div>
                     </div>
                 </fieldset>
@@ -203,15 +208,7 @@
     </div>
 
 
-    <div class="modal-overlay">
-        <div class="modal">
-            <img src="./img/Feito.svg" alt="">
-            <h1>Cadastro Salvo!</h1>
-            <p>Todo certo, seu cadastro foi salvo.</p>
-            <a href="/">Voltar para página inicial</a>
-        </div>
     </div>
-
     <script src="./scripts/main.js"></script>
     <script>
         const Modal = {
@@ -230,22 +227,6 @@
         }
     </script>
 
-    <script>
-        const Modal = {
-            open() {
-                document
-                    .querySelector('.modal-overlay')
-                    .classList
-                    .add('active')
-            },
-            close() {
-                document
-                    .querySelector('.modal-overlay')
-                    .classList
-                    .remove('active')
-            }
-        }
-    </script>
 </body>
 
 </html>

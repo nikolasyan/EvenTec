@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/partials/cardsItens.css">
     <link rel="stylesheet" href="./css/partials/pageEvents.css">
 
-
+    
 </head>
 
 <body id="pageEvent">
@@ -42,8 +42,11 @@
                     <div class="busca">
                         <label for="txtBusca">Pesquisar evento:</label>
                         <div class="algItem">
-                            <input type="text" id="txtBusca" class="txtBusca" placeholder="Escreva aqui" value="" />
-                            <button class="btn-search">
+                            <input 
+                            type="text" id="txtBusca" class="txtBusca" placeholder="Escreva aqui"
+                            value=""
+                            />
+                            <button class="btn-search"> 
                                 <img src="./img/search.png" class="btnBusca" alt="Buscar" />
                             </button>
                         </div>
@@ -58,9 +61,9 @@
                     <img src="{{event.img}}" />
                     <div>
                         <strong class="nome-evento">
-
-                            {{event.nome}}
-
+                            
+                                {{event.titulo}}
+                            
                         </strong>
                         <span>{{event.categoria}}</span>
                     </div>
@@ -75,7 +78,7 @@
                     </div>
                     <div>
                         <span>Horário</span>
-                        <h2>{{event.hora}}</h2>
+                        <h2>{{event.horaIni}}</h2>
                     </div>
                 </div>
 
