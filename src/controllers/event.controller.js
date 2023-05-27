@@ -20,7 +20,7 @@ class EventController {
 
         events.push(newEvent);
 
-        return response.json(newEvent)
+        // return response.json(newEvent)
     }
 }
 
