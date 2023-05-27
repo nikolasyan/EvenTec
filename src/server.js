@@ -28,10 +28,12 @@ server.use(express.json())
 
 const nunjucks = require('nunjucks')
 const { eventRouter } = require('./routes/event.router')
+const { userRouter } = require('./routes/user.router')
 nunjucks.configure('src/views', {
   express: server,
   noCache: true,
 })
+
 
 server.post('/cadastro', () => {
   console.log(req)
@@ -48,5 +50,5 @@ server
   .get('/login', pageLogin)
   .get('/meusEventos', pageMeusEventos)  
   .listen(3000)
-  server.use(eventRouter)
+  server.use(eventRouter, userRouter)
   
