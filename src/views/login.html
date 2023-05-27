@@ -25,15 +25,15 @@
       <div class="sign">
 
         <!-- Form access account -->
-        <form action="#" class="formSignIn">
+        <form action="/signin" class="formSignIn" method="post">
           <h2 class="titleSign">Acesse sua conta</h2>
           <div class="inputField">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" />
+            <input type="email" placeholder="Email" id="email" name="email"/>
           </div>
           <div class="inputField">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Senha" />
+            <input type="password" placeholder="Senha" id="senha" name="senha" />
           </div>
           <!-- Depois ir para pagina myEvent -->
           <input type="submit" value="Login" class="btn solid" />
@@ -41,21 +41,21 @@
         </form>
 
         <!-- Form Create an account -->
-        <form action="#" class="formSignUp">
+        <form action="/signup" class="formSignUp" method="post" id="formSignUp">
           <h2 class="titleSign">Crie a sua conta</h2>
           <div class="inputField">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Nome" />
+            <input type="text" placeholder="Nome" id="nome" name="nome" />
           </div>
           <div class="inputField">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" />
+            <input type="email" placeholder="Email" id="email" name="email" />
           </div>
           <div class="inputField">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Senha" />
+            <input type="password" placeholder="Senha" id="senha" name="senha" />
           </div>
-          <input type="submit" class="btn" value="Cadastro" />
+          <input type="submit" class="btn" value="Cadastro" form="formSignUp"/>
         </form>
 
       </div>
