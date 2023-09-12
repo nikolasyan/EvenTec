@@ -27,7 +27,7 @@ public class LoginController {
         Optional<UserItem> item = this.userItemService.getByEmailAndPassword(userItem.getEmail(), userItem.getPassword());
 
         if(item.isPresent()){
-            return "redirect:/";
+            return "redirect:/myAccount";
         }
         else {
             redirectAttributes.addFlashAttribute("erro", "Campos inválidos. Tente novamente.");

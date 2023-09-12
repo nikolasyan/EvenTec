@@ -17,6 +17,8 @@ public class UserItem implements Serializable {
     private String userName;
     private String email;
     private String password;
+    private boolean aluno;
+    private boolean professor;
 
     private Long cpf;
     private String emailInstitucional;

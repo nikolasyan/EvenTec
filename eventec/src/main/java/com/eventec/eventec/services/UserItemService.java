@@ -8,11 +8,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 @Service
-public class UserItemService {
+public class UserItemService{
     @Autowired
     private UserItemRepository userItemRepository;
 
@@ -24,4 +25,10 @@ public class UserItemService {
     public UserItem save(UserItem userItem) {
         return userItemRepository.save(userItem);
     }
+
+    public List<UserItem> consultaUsuario(){
+        return userItemRepository.findAll();
+    }
+
+
 }
