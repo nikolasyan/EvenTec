@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Eventos</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/partials/header.css">
+    <link rel="stylesheet" href="../css/partials/forms.css">
+    <link rel="stylesheet" href="../css/partials/cardsItens.css">
+    <link rel="stylesheet" href="../css/partials/pageEvents.css">
+
+    <style>
+        /* MODAL =================================== */
+        .modal-overlay {
+            width: 100%;
+            height: 100%;
+
+            background-color: #26569F;
+            color: #f0f2f5;
+            position: fixed;
+            top: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            opacity: 0;
+            visibility: hidden;
+
+            z-index: 999;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            padding: 2.4rem;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+
+            background-image: url(../img/Background.svg);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            width: 100%;
+            height: 100vh;
+        }
+
+        .modal img {
+            width: 70px;
+            margin: 0 auto;
+        }
+
+        .modal h1 {
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .modal p {
+            margin-top: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: lighter;
+        }
+
+        .modal a {
+            width: 250px;
+            height: 5.6rem;
+            background: var(--btn-color);
+            color: var(--white-text);
+            border: 0;
+            border-radius: .8rem;
+            cursor: pointer;
+            font: 700 1.6rem Roboto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+
+            transition: 0.2s;
+            margin-top: 3.2rem;
+        }
+
+        .modal a:hover {
+            background: var(--btn-colorh);
+        }
+    </style>
+
+
+</head>
+
+<body id="pageEvent">
+    <!-- Plugin Libras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <div id="container">
+        <header class="page-header">
+            <div class="col">
+                <div class="top-bar-container">
+                    <a href="/"><img src="../img/Voltar.svg" alt="Voltar"></a>
+                    <img src="../img/Eventec.svg" alt="Logo">
+                </div>
+            </div>
+
+            <div class="header-content">
+                <strong>Estes são os eventos disponíveis</strong>
+                <form class="search" action="">
+                    <div class="busca">
+                        <label for="txtBusca">Pesquisar evento:</label>
+                        <div class="algItem">
+                            <input 
+                            type="text" id="txtBusca" class="txtBusca" placeholder="Escreva aqui"
+                            value=""
+                            />
+                            <button class="btn-search"> 
+                                <img src="../img/search.png" class="btnBusca" alt="Buscar" />
+                            </button>
+                        </div>
+                </form>
+            </div>
+        </header>
+        <main>
+            <!-- Primeiro card -->
+
+            <article th:each="item: ${eventItems}" class="card-item">
+                <header>
+                    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/male-customer-call-service-with-cap-6760891-5600698.png?f=webp" />
+                    <div>
+                        <strong th:text="${item.title}" class="nome-evento"></strong>
+                        <span>Marketing</span>
+                    </div>
+                </header>
+
+                <p th:text="${item.description}"></p>
+
+                <div class="cardData">
+                    <div>
+                        <span>Dia</span>
+                        <h2 th:text="${item.dateEvent}"></h2>
+                    </div>
+                    <div>
+                        <span>Horário</span>
+                        <h2 th:text="${item.hourStart}"></h2>
+                    </div>
+                </div>
+
+                <footer>
+                    <p>xxxxxxxxxx</p>
+                    <button onclick="Modal.open()" type="button">Se cadastrar</button>
+                </footer>
+
+            </article>
+
+
+
+
+
+
+            <article class="card-item">
+                <header>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJWN86-v0qkHQfG1Qc6V7-H_C2-apoL1a6NQ3F3-pZ25UZdIVDZe3qGMCAY2aWd_Yx-dI&usqp=CAU" />
+                    <div>
+                        <strong class="nome-evento">
+                            
+                                O que é internet das coisas?
+                            
+                        </strong>
+                        <span>Tecnologia da Informação</span>
+                    </div>
+                </header>
+
+                <p>Este é um evento sobre tecnologia para todos os públicos.</p>
+
+                <div class="cardData">
+                    <div>
+                        <span>Dia</span>
+                        <h2>16/06/2023</h2>
+                    </div>
+                    <div>
+                        <span>Horário</span>
+                        <h2>10:40</h2>
+                    </div>
+                </div>
+
+                <footer>
+                    <p>xxxxxxxxxx</p>
+                    <button onclick="Modal.open()" type="button">Se cadastrar</button>
+                </footer>
+
+            </article>
+            <article class="card-item">
+                <header>
+                    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/male-customer-call-6760896-5600703.png?f=webp" />
+                    <div>
+                        <strong class="nome-evento">
+                            
+                                Como subir seu projeto em Node no Google Firebase
+                            
+                        </strong>
+                        <span>Tecnologia da Informação</span>
+                    </div>
+                </header>
+
+                <p>Este é um evento sobre tecnologia para todos os públicos.</p>
+
+                <div class="cardData">
+                    <div>
+                        <span>Dia</span>
+                        <h2>16/06/2023</h2>
+                    </div>
+                    <div>
+                        <span>Horário</span>
+                        <h2>10:40</h2>
+                    </div>
+                </div>
+
+                <footer>
+                    <p>xxxxxxxxxx</p>
+                    <button onclick="Modal.open()" type="button">Se cadastrar</button>
+                </footer>
+
+            </article>
+            <article class="card-item">
+                <header>
+                    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/male-customer-call-service-with-cap-6760891-5600698.png?f=webp" />
+                    <div>
+                        <strong class="nome-evento">
+                            
+                                Meu evento sobre Marketing
+                            
+                        </strong>
+                        <span>Marketing</span>
+                    </div>
+                </header>
+
+                <p>Este é um evento sobre marketing para todos os públicos.</p>
+
+                <div class="cardData">
+                    <div>
+                        <span>Dia</span>
+                        <h2>16/06/2023</h2>
+                    </div>
+                    <div>
+                        <span>Horário</span>
+                        <h2>10:40</h2>
+                    </div>
+                </div>
+
+                <footer>
+                    <p>xxxxxxxxxx</p>
+                    <button onclick="Modal.open()" type="button">Se cadastrar</button>
+                </footer>
+
+            </article>
+        </main>
+        
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <img src="../img/Feito.svg" alt="">
+            <h1>Cadastrado com sucesso!</h1>
+            <p>Todo certo, sua inscrição no evento foi salva!.</p>
+            <a href="/">Voltar para página inicial</a>
+        </div>
+    </div>
+
+
+    <script src="../searchEvent.js"></script>
+    <script>
+        const Modal = {
+            open() {
+                document
+                    .querySelector('.modal-overlay')
+                    .classList
+                    .add('active')
+            },
+            close() {
+                document
+                    .querySelector('.modal-overlay')
+                    .classList
+                    .remove('active')
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Eventos</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/partials/header.css">
+    <link rel="stylesheet" href="../css/partials/forms.css">
+    <link rel="stylesheet" href="../css/partials/pageMyEvents.css">
+    <link rel="stylesheet" href="../css/partials/cardsItens.css">
+
+</head>
+
+<body id="pageMyEvent">
+    <!-- Plugin Libras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <div id="container">
+        <header class="page-header">
+            <div class="col">
+                <div class="top-bar-container">
+                    <a href="../../../../../../eventec%20final/public/index.html"><img src="../../../../../../eventec%20final/public/img/Voltar.svg" alt="Voltar"></a>
+                    <img src="../../../../../../eventec%20final/public/img/Eventec.svg" alt="Logo">
+                </div>
+            </div>
+
+            <div class="header-content">
+                <strong>Meus Eventos</strong>
+                <p>Aqui se encontram todos os eventos em que
+                    você se cadastrou.</p>
+            </div>
+        </header>
+        <main>
+            <!-- Primeiro card -->
+            {%for event in events %}
+            <article class="card-item">
+                <header>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJWN86-v0qkHQfG1Qc6V7-H_C2-apoL1a6NQ3F3-pZ25UZdIVDZe3qGMCAY2aWd_Yx-dI&usqp=CAU" />
+                    <div>
+                        <strong class="nome-evento">
+                            
+                                Evento de Tecnologia
+                            
+                        </strong>
+                        <span>Tecnologia da Informação</span>
+                    </div>
+                </header>
+
+                <p>Este é um evento sobre tecnologia para todos os públicos.</p>
+
+                <div class="cardData">
+                    <div>
+                        <span>Dia</span>
+                        <h2>16/06/2023</h2>
+                    </div>
+                    <div>
+                        <span>Horário</span>
+                        <h2>10:40</h2>
+                    </div>
+                </div>
+
+                <footer>
+                    <p>xxxxxxxxxx</p>
+                    <button style="background-color: #E33D3D;" onclick="Modal.open()" type="button">Cancelar Inscrição</button>
+                </footer>
+
+            </article>            {%endfor %}
+        </main>
+    </div>
+    <script src="../../../../../../eventec%20final/public/scripts/searchEvent.js"></script>
+
+</body>
+
+</html>
