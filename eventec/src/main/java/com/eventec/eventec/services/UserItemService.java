@@ -17,8 +17,8 @@ public class UserItemService{
     @Autowired
     private UserItemRepository userItemRepository;
 
-    public Optional<UserItem> getByEmailAndPassword(String email, String senha) {
-        return userItemRepository.findByEmailAndPassword(email, senha);
+    public Optional<UserItem> getByEmailAndPassword(String email, String password) {
+        return userItemRepository.findByEmailAndPassword(email, password);
     }
     public Iterable<UserItem> getAll() { return userItemRepository.findAll(); }
 

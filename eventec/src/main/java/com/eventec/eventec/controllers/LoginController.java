@@ -1,4 +1,5 @@
 package com.eventec.eventec.controllers;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.eventec.eventec.models.UserItem;

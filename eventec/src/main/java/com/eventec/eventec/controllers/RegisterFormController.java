@@ -10,11 +10,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-@CrossOrigin
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
+
 @Controller
 public class RegisterFormController {
 
@@ -22,10 +21,12 @@ public class RegisterFormController {
     private UserItemService userItemService;
 
     @GetMapping("/register")
-    public String showCreatedForm(UserItem userItem) { return "login";}
+    public String showCreatedForm(UserItem userItem) {
+        return "login";
+    }
 
     @PostMapping("/registerUser")
-    public  String createUserItem(@Valid UserItem userItem, BindingResult result, Model model){
+    public String createUserItem(@Valid UserItem userItem, BindingResult result, Model model) {
         UserItem item = new UserItem();
         item.setUserid(userItem.getUserid());
         item.setUserName(userItem.getUserName());
@@ -33,12 +34,21 @@ public class RegisterFormController {
         item.setPassword(userItem.getPassword());
 
         userItemService.save((userItem));
-        return "redirect:/";
+        return "redirect:http://localhost:3000/";
     }
-
-    @RequestMapping("/myAccount")
+    @GetMapping("/myAccount")
     public ResponseEntity<Object> consultaUsuario() {
-        return ResponseEntity.status(HttpStatus.OK).body((userItemService));
+        return ResponseEntity.status(HttpStatus.OK).body(userItemService.consultaUsuario());
     }
-
 }
+/*
+    @GetMapping("/myAccount")
+    public ResponseEntity<Object> consultaUsuario(@RequestParam String email, @RequestParam String password) {
+        Optional<UserItem> user = userItemService.getByEmailAndPassword(email, password);
+        if (user.isPresent()) {
+            return ResponseEntity.status(HttpStatus.OK).body(user.get());
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário não encontrado");
+        }
+    }
+*/
