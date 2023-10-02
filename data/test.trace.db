@@ -695,3 +695,9 @@ show tabls [42000-214]
 2023-10-01 13:39:32 jdbc[23]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "show [*]tabls"; SQL statement:
 show tabls [42000-214]
+2023-10-01 23:05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USER_ITEM" not found; SQL statement:
+SELECT * FROM user_item WHERE email = ? AND password = ? [42102-214]
+2023-10-01 23:06:26 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USER_ITEM" not found; SQL statement:
+SELECT * FROM user_item WHERE email = edsu AND password = 123 [42102-214]

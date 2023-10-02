@@ -13,7 +13,9 @@ import java.util.Optional;
 
 @Repository
 public interface UserItemRepository extends JpaRepository<UserItem, Long> {
-    Optional<UserItem> findByEmailAndPassword(String email, String password);
+
+    @Query(value = "SELECT * FROM user_items WHERE email = :email AND password = :password", nativeQuery = true)
+    Optional<UserItem> findByEmailAndPassword(@Param("email") String email, @Param("password") String password);
 
     List<UserItem> findAllByUserid(Long userid);
 }

@@ -17,7 +17,6 @@ public class UserItemService{
     private UserItemRepository userItemRepository;
 
     public Optional<UserItem> getByEmailAndPassword(String email, String password) {
-        // This is a basic example, you might want to use an encrypted password instead
         return userItemRepository.findByEmailAndPassword(email, password);
     }
     public Iterable<UserItem> getAll() { return userItemRepository.findAll(); }
