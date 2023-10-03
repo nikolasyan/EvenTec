@@ -33,7 +33,6 @@ public class UserItem implements Serializable {
     @Column(unique = true)
     private Long cpf;
 
-    @Column(unique = true)
     private String emailInstitucional;
 
     //Aluno

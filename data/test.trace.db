@@ -701,3 +701,6 @@ SELECT * FROM user_item WHERE email = ? AND password = ? [42102-214]
 2023-10-01 23:06:26 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USER_ITEM" not found; SQL statement:
 SELECT * FROM user_item WHERE email = edsu AND password = 123 [42102-214]
+2023-10-03 11:34:28 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]USER_ITEMS"; expected "UPDATE, USE"; SQL statement:
+USER_ITEMS [42001-214]

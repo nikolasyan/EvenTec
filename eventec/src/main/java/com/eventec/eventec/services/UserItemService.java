@@ -17,7 +17,7 @@ public class UserItemService{
     private UserItemRepository userItemRepository;
 
     public Optional<UserItem> getByEmailAndPassword(String email, String password) {
-        return userItemRepository.findByEmailAndPassword(email, password);
+        return userItemRepository.findUserByEmailAndPassword(email, password);
     }
     public Iterable<UserItem> getAll() { return userItemRepository.findAll(); }
 
@@ -25,9 +25,9 @@ public class UserItemService{
         return userItemRepository.save(userItem);
     }
 
-    public List<UserItem> consultaUsuario(){
-        return userItemRepository.findAll();
-    }
+//    public List<UserItem> consultaUsuario(){
+ //       return userItemRepository.findAll();
+  //  }
 
     public UserItem createUserItem(UserItem userItem){
         return userItemRepository.save(userItem);
